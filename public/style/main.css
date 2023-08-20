@@ -1,0 +1,171 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+.bg-body-tertiary {
+  background-color: #7749f8 !important;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 27.84px;
+  color: #ffffff;
+}
+
+.nav-link {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14.52px;
+  color: #ffffff;
+}
+
+header .banner {
+  background-color: #ffffff;
+  border: 1px solid #dee2e6;
+  padding: 1rem 0rem;
+}
+
+header .banner .container h1 {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 48.41px;
+}
+
+main {
+  background-color: #f8f9fa;
+  padding: 2rem 0rem;
+}
+
+main .main-heading {
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 33.89px;
+}
+
+main .container section {
+  width: 881px;
+  background-color: #ffffff;
+  padding: 2rem 1rem;
+  border: 1px solid #dee2e6;
+  border-radius: 12px;
+}
+
+main .container section img {
+  width: 80px;
+  height: 80px;
+  border-radius: 15px;
+}
+
+main .container section h4 {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29.05px;
+  color: #212529;
+}
+
+main .container section h6 {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19, 36px;
+  color: #6c757d;
+}
+
+main .container section p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  color: #6c757d;
+  padding-top: 1rem;
+}
+
+main .container section a {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  color: #7749f8;
+  text-decoration: none;
+}
+
+/* Media query */
+@media (min-width: 992px) {
+  .navbar-expand-lg .navbar-nav .nav-link {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 14.52px;
+    color: #ffffff;
+  }
+  .navbar-expand-lg .navbar-collapse {
+    justify-content: end;
+  }
+}
+
+@media (max-width: 768px) {
+  main .container section {
+    width: 600px;
+    background-color: #ffffff;
+    padding: 2rem 1rem;
+    border: 1px solid #dee2e6;
+    border-radius: 12px;
+  }
+}
+
+@media (max-width: 425px) {
+  header .banner .container h1 {
+    font-size: 26px;
+    text-align: center;
+  }
+  main .container section {
+    width: 400px;
+    background-color: #ffffff;
+    padding: 2rem 1rem;
+    border: 1px solid #dee2e6;
+    border-radius: 12px;
+  }
+  main .container section h4 {
+    font-weight: 600;
+    font-size: 16px;
+  }
+
+  main .container section h6 {
+    font-weight: 600;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 375px) {
+  main .container section {
+    width: 350px;
+    background-color: #ffffff;
+    padding: 2rem 1rem;
+    border: 1px solid #dee2e6;
+    border-radius: 12px;
+  }
+  main .container section h4 {
+    font-weight: 600;
+    font-size: 16px;
+  }
+
+  main .container section h6 {
+    font-weight: 600;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 320px) {
+  main .container section {
+    width: 290px;
+    background-color: #ffffff;
+    padding: 2rem 1rem;
+    border: 1px solid #dee2e6;
+    border-radius: 12px;
+  }
+}

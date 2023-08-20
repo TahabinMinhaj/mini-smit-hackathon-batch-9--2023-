@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="register.css">
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script>
+        // Initialize Firebase with your configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyA06rnks2wD2Zvud52rOv7ZOC9UcvSpXyY",
+            authDomain: "personal-blogging-app-5e1a3.firebaseapp.com",
+            databaseURL: "https://personal-blogging-app-5e1a3-default-rtdb.firebaseio.com",
+            projectId: "personal-blogging-app-5e1a3",
+            storageBucket: "personal-blogging-app-5e1a3.appspot.com",
+            messagingSenderId: "116439809681",
+            appId: "1:116439809681:web:e307f5726b32632cdb4930"
+        };
+        firebase.initializeApp(firebaseConfig);
+
+        // Function to sign up a user
+        function signUp() {
+            const firstName = document.getElementById('first-name').value;
+            const lastName = document.getElementById('last-name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+
+            if (password !== confirmPassword) {
+                alert("Passwords do not match!");
+                return;
+            }
+
+            firebase.auth().createUserWithEmailAndPassword(email, password)
+                .then((userCredential) => {
+                    // User signed up successfully
+                    const user = userCredential.user;
+                    console.log("User signed up:", user);
+                    window.location = '../sign-in/login.html'
+                    // You can add further logic here, like saving additional user info
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    console.error("Signup error:", errorMessage);
+                });
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar bg-body-tertiary">
+            <div class="container">
+                <a class="navbar-brand" href="../../index.html">Personal Blogging App</a>
+                <ul class="navbar-nav mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="../sign-in/login.html">Login</a>
+                    </li>
+            </div>
+            </div>
+        </nav>
+        <div class="banner">
+            <div class="container">
+                <h1>Signup</h1>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container mx-3">
+            <form class="row g-3 p-4">
+                <div class="col-md-8">
+                    <input type="text" class="form-control" id="first-name" placeholder="First Name" required><br>
+                </div>
+                <div class="col-md-8">
+                    <input type="text" class="form-control" id="last-name" placeholder="Last Name" required><br>
+                </div>
+                <div class="col-md-8">
+                    <input type="email" class="form-control" id="email" placeholder="Email" required><br>
+                </div>
+                <div class="col-md-8">
+                    <input type="password" class="form-control" id="password" placeholder="Password" minlength="8"
+                        required><br>
+                </div>
+                <div class="col-md-8">
+                    <input type="password" class="form-control" id="confirm-password" placeholder="Confirm Password"
+                        minlength="8" required><br>
+                </div>
+                <div class="col-12 d-flex justify-content-center">
+                    <input class="btn btn-primary px-5" onclick="signUp()" value="Sign Up">
+                </div>
+
+            </form>
+        </div>
+    </main>
+</body>
+
+</html>
